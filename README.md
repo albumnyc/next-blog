@@ -1,0 +1,1 @@
+next + koa + react ssr + mobx;

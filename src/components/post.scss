@@ -1,0 +1,60 @@
+@import '../../pages/index.scss';
+.content.center.mw6.pa3.pa4-ns {
+    h1,
+    h2 {
+        text-align: center;
+    }
+    p {
+        color: steelblue;
+    }
+    blockquote {
+        position: relative;
+        padding-left: px2rem(20);
+        word-break: break-all;
+        box-sizing: border-box;
+        display: grid;
+        align-items: center;
+        &::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+        }
+        p {
+            width: 100% !important;
+        }
+        &+p {
+            border-top: 1px solid grey;
+        }
+    }
+    pre {
+        width: 60vw;
+        // margin-left: 20vw;
+        border: 1px solid grey;
+        position: relative;
+        font-size: px2rem(15);
+        border-radius: $borderRadius;
+        @include section-padding;
+        background: $bg-theme-color;
+        code,
+        xmp {
+            background: $none;
+            width: 60vw;
+            border: $none;
+            text-decoration: $none;
+            display: inline-block;
+            white-space: pre-wrap;
+            overflow: hidden;
+        }
+    }
+    .body_wrapper {
+        p {
+            font-size: px2rem(10);
+            width: 60vw;
+            text-indent: px2rem(32);
+            color: black;
+            line-height: px2rem(25);
+            text-align: justify;
+            text-align-last: left;
+        }
+    }
+}

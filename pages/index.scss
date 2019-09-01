@@ -1,0 +1,163 @@
+html,
+body {
+    font-size: 20px;
+    overflow-x: hidden;
+    padding: 0px;
+    margin: 0;
+     ::selection {
+        background: #d3d3d3;
+        color: #f40;
+    }
+}
+
+$font-size: 20;
+$borderRadius: 3px;
+$hoverColor: #f40;
+$acolor: #f40;
+$none: none;
+$btn-theme-color: #31e202;
+$bg-theme-color: lightpink;
+@function px2rem($px) {
+    @return $px * (1 / $font-size) * 1rem;
+}
+
+@mixin section-margin {
+    margin: px2rem(10) px2rem(5);
+}
+
+@mixin section-padding {
+    padding: px2rem(10);
+}
+
+@mixin a {
+    color: $acolor;
+    text-decoration: $none;
+    display: inline-block;
+}
+
+@mixin ahover {
+    transform-origin: center center;
+    transform: scale(1.2, 1.2);
+}
+
+@mixin normalhover {
+    &:hover {
+        box-shadow: 0 0 15px #f00;
+    }
+}
+
+@mixin nomaltransition {
+    transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 300ms;
+}
+
+@keyframes letterspacing {
+    0% {
+        letter-spacing: -0.2rem;
+        filter: blur(0.1rem);
+    }
+    10% {
+        filter: blur(0.2rem);
+    }
+    100% {
+        letter-spacing: 0.5rem;
+        filter: blur(0rem);
+        color: #fff;
+    }
+}
+
+.mb4.pb2 {
+    font-size: px2rem(16);
+    box-shadow: 2px 2px 5px #333333;
+    border-radius: $borderRadius;
+    margin: 10px 5px;
+    text-align: center;
+    @include section-padding;
+    @include section-margin;
+    @include normalhover;
+    @include nomaltransition;
+    a {
+        &:not(:last-child) {
+            color: $acolor;
+            background: $btn-theme-color;
+            border-radius: $borderRadius;
+            padding: 0 px2rem(10);
+            @include a;
+            &:hover {
+                @include ahover;
+            }
+        }
+        &:last-child {
+            pointer-events: none;
+            cursor: default;
+            opacity: 0.6;
+        }
+    }
+    .mv1.o-60 {
+        width: 100%;
+        font-size: px2rem(14);
+    }
+    time {
+        width: 100%;
+        display: inline-block;
+        text-align: right;
+    }
+}
+
+footer {
+    text-align: right;
+    padding-right: px2rem(15);
+}
+
+.center {
+    margin: 0 auto;
+    width: 60%;
+}
+
+.pv4 {
+    .pv4 {
+        cursor: default;
+        background-image: url('/assets/images/bg.jpg');
+        background-size: 100% 100%;
+        width: 100vw;
+        text-align: center;
+        display: grid;
+        grid-template-rows: 1.5fr 1fr 1fr;
+        @include nomaltransition;
+        .normal.pa0 {
+            white-space: nowrap;
+            width: 100%;
+            max-width: 100vw;
+            a {
+                filter: brightness(2) contrast(200%);
+                animation: letterspacing 10s infinite alternate ease-in-out;
+                &:hover {
+                    color: #f40;
+                }
+            }
+        }
+        .normal.ph1 {
+            font-size: px2rem(22);
+            filter: brightness(2) contrast(200%);
+            color: #f40;
+        }
+        .header_href_section {
+            display: inline-block;
+            box-shadow: 20px 20px 10px 0px rgba(0, 0, 0, 0.5) inset, /* inner shadow */
+            20px 20px 10px 0px rgba(0, 0, 0, 0.5);
+            color: deeppink;
+            margin: 0 px2rem(5);
+            text-shadow: 1px 1px 2px pink;
+            font-size: px2rem(30);
+            border-radius: $borderRadius;
+            padding: px2rem(2) px2rem(10);
+            text-decoration: $none;
+            opacity: 1;
+        }
+        @media screen and (min-width: px2rem(900)) {
+            &:hover {
+                background-size: 140% 140%;
+                background-position: 40% 20%;
+            }
+        }
+    }
+}

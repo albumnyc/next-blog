@@ -1,0 +1,13 @@
+@import '../../pages/index';
+.card-item {
+    width: 100%;
+    .article_section {
+        .article_link {
+            cursor: pointer;
+            line-height: px2rem(30);
+            &:hover {
+                color: $hoverColor;
+            }
+        }
+    }
+}
