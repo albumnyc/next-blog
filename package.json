@@ -6,6 +6,7 @@
     "homepage": "http://www.nieyichao.com",
     "scripts": {
         "start": "node server.js && opener http://localhost:3000",
+        "dev": "node server.js && opener http://localhost:3000",
         "build": "next build",
         "build:content": "processmd content/**/*.{yml,md} --outputDir content --preview 110 --summaryOutput content/summary.json",
         "postbuild:content": "node packageTags",

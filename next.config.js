@@ -2,15 +2,7 @@ const SUMMARY_JSON = require('./content/summary.json');
 const withSass = require('@zeit/next-sass');
 
 module.exports = withSass({
-    // rules: [
-    //     {
-    //         pathname: '/docs**',
-    //         method: ['GET', 'POST', 'OPTIONS'],
-    //         dest: 'http://www.nieyichao.com',
-    //     },
-    //     { pathname: '/**', dest: 'http//www.nieyichao.com/1' },
-    // ],  // micro proxy
-    exportPathMap: function() {
+    exportPathMap: function () {
         // 导出静态页面
         const posts = {};
         const paths = {};
