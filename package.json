@@ -4,6 +4,11 @@
     "description": "Markdown based blog using next.js",
     "main": "index.js",
     "homepage": "http://www.nieyichao.com",
+    "husky": {
+        "hooks": {
+            "pre-commmit": "deploy.sh"
+        }
+    },
     "scripts": {
         "start": "node server.js && opener http://localhost:3000",
         "dev": "node server.js && opener http://localhost:3000",
