@@ -9,7 +9,6 @@
         "dev": "node server.js && opener http://localhost:3000",
         "build": "next build",
         "build:content": "processmd content/**/*.{yml,md} --outputDir content --preview 110 --summaryOutput content/summary.json",
-        "postbuild:content": "node packageTags",
         "build:content:watch": "processmd content/**/*{yml,md} --outputDir content --preview 110 --summaryOutput content/summary.json --watch",
         "build:export": "npm run build && npm run export",
         "export": "next export && cp -R static/* out/",
