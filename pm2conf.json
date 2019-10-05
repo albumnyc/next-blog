@@ -1,0 +1,11 @@
+{
+    "apps": [{
+        "name": "next-blog", // 名称
+        "script": "next-blog-server.js", // 要执行的脚本文件
+        "env": {
+            "NODE_ENV": "production" // node参数
+        },
+        "exec_mode": "cluster", // 负载均衡
+        "autorestart": true // 自动重启
+    }]
+}
